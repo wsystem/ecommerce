@@ -8,7 +8,14 @@
 
 	$app->get('/', function() {
 
-		echo "Bem-Vindo ao Ecommerce!";
+		
+
+		$sql = new Wsystem\DB\Sql();
+
+		$results = $sql->select("SELECT * FROM tb_users");
+
+		echo json_encode($results); 
+
 	});
 
 	$app->run();
